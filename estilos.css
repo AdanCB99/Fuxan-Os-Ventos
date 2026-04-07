@@ -854,6 +854,32 @@ summary:hover {
     color: rgba(255,255,255,0.8);
 }
 
+.texto-contador {
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 20px;
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,0.9);
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .countdown {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .texto-contador {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 5px 0;
+        font-size: 12px;
+    }
+}
+
 /* 🔥 SEPARACIÓN visual (opcional estilo FIFA) */
 .countdown::before {
     content: "";
