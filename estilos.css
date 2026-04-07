@@ -886,6 +886,26 @@ summary:hover {
     }
 }
 
+@media (max-width: 768px) {
+
+    .texto-contador {
+        order: 1;
+    }
+
+    .tiempo {
+        order: 2;
+    }
+
+    .separador {
+        order: 2;
+    }
+
+    .btn-inscribete {
+        order: 3; /* 🔥 SIEMPRE ABAJO */
+        margin-top: 10px;
+    }
+}
+
 /* por defecto (desktop) */
 .mobile-texto {
     display: none;
@@ -932,6 +952,7 @@ summary:hover {
     color: white;
     font-weight: 800;
     font-size: 30px;
+    display: inline-block;
 
     border-radius: 999px;
     text-decoration: none;

@@ -231,10 +231,10 @@ function iniciarContador() {
     const ahora = new Date().getTime();
     const diferencia = fechaObjetivo - ahora;
 
-    if (diferencia <= 0) {
-      elemento.innerHTML = "🔥 ¡El torneo ha comenzado!";
-      return;
-    }
+if (diferencia <= 0) {
+  document.querySelector(".texto-contador").textContent = "🔥 ¡El torneo ha comenzado!";
+  return;
+}
 function animarCambio(id, nuevoValor) {
   const el = document.getElementById(id);
   if (el.textContent != nuevoValor) {
