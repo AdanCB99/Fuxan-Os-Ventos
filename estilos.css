@@ -799,6 +799,20 @@ summary:hover {
     animation: glowCountdown 1.5s ease-in-out infinite alternate;
 }
 
+.separador {
+    font-size: 26px;
+    font-weight: 800;
+    opacity: 0.8;
+    margin: 0 4px;
+    animation: blink 1s infinite;
+}
+
+/* efecto parpadeo tipo reloj */
+@keyframes blink {
+    0%, 50%, 100% { opacity: 0.8; }
+    25%, 75% { opacity: 0.2; }
+}
+
 /* 🔥 BLOQUES tipo FIFA */
 .tiempo {
     background: rgba(255,255,255,0.08);
@@ -807,6 +821,7 @@ summary:hover {
     padding: 10px 14px;
     border-radius: 10px;
     min-width: 65px;
+    border: 1px solid rgba(255,255,255,0.15);
 
     display: flex;
     flex-direction: column;
@@ -823,8 +838,10 @@ summary:hover {
 
 /* 🔢 NÚMEROS */
 .tiempo span {
+    font-variant-numeric: tabular-nums;
     font-size: 28px;
     font-weight: 800;
+    letter-spacing: 1px;
 
     color: #ffffff;
     text-shadow: 0 0 12px rgba(255,255,255,0.8);
