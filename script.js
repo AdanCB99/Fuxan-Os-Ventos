@@ -235,16 +235,29 @@ function iniciarContador() {
       elemento.innerHTML = "🔥 ¡El torneo ha comenzado!";
       return;
     }
+function animarCambio(id, nuevoValor) {
+  const el = document.getElementById(id);
+  if (el.textContent != nuevoValor) {
+    el.style.transform = "translateY(-5px)";
+    el.style.opacity = "0.5";
 
+    setTimeout(() => {
+      el.textContent = nuevoValor;
+      el.style.transform = "translateY(0)";
+      el.style.opacity = "1";
+    }, 150);
+  }
+}
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
     const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-    elemento.innerHTML =
-      `⏳ ${dias} días | ${horas}h ${minutos}m ${segundos}s para el torneo`;
-  }
-
+animarCambio("dias", dias);
+animarCambio("horas", horas);
+animarCambio("minutos", minutos);
+animarCambio("segundos", segundos);
+}
   actualizarContador();
   setInterval(actualizarContador, 1000);
 }
