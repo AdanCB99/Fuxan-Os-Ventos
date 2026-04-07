@@ -232,7 +232,9 @@ function iniciarContador() {
     const diferencia = fechaObjetivo - ahora;
 
 if (diferencia <= 0) {
-  document.querySelector(".texto-contador").textContent = "🔥 ¡El torneo ha comenzado!";
+  document.querySelector(".desktop-texto").style.display = "none";
+  document.querySelector(".mobile-texto").style.display = "none";
+  document.getElementById("mensaje-final").textContent = "🔥 ¡El torneo ha comenzado!";
   return;
 }
 function animarCambio(id, nuevoValor) {
