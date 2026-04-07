@@ -379,6 +379,12 @@ a:hover::after {
     transition: 0.3s;
 }
 
+.fotos img:only-child {
+    grid-column: 1 / -1; /* ocupa todas las columnas */
+    justify-self: center;
+    max-width: 600px; /* opcional */
+}
+
 @media (max-width: 768px) {
     .fotos {
         grid-template-columns: repeat(2, 1fr);
