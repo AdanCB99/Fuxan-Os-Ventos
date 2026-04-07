@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo llegar a Lugo</title>
+
+<link rel="stylesheet" href="estilos.css">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.contenido {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #0077ff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #005ed6;
+}
+
+.plataformas {
+    margin-top: 25px;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.boton-plataforma {
+    display: flex;
+    justify-content: center;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.maps { background: #34a853; }
+.omio { background: #6c2bd9; }
+.rome2rio { background: #ff5a00; }
+
+.card {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 12px;
+}
+
+.recomendada {
+    border: 2px solid #0077ff;
+}
+</style>
+
+<script defer>
+function buscarTodo() {
+
+    const origen = document.getElementById("origen").value.trim().toLowerCase();
+
+    if (!origen) {
+        alert("Escribe desde dónde viajas");
+        return;
+    }
+
+    const fecha = "2026-07-13";
+    const origenURL = encodeURIComponent(origen);
+
+    // 🌍 LINKS EXTERNOS
+    document.getElementById("btnMaps").href =
+        `https://www.google.com/maps/dir/?api=1&origin=${origenURL}&destination=Lugo&travelmode=transit`;
+
+    document.getElementById("btnOmio").href =
+        `https://www.omio.es/app/search-frontend/results/${origenURL}/LUG/${fecha}`;
+
+    document.getElementById("btnRome2Rio").href =
+        `https://www.rome2rio.com/es/map/${origenURL}/Lugo`;
+
+    document.getElementById("plataformas").style.display = "flex";
+
+    // 🤖 SISTEMA DE RUTAS LOCAL
+    const rutas = {
+        madrid: [
+            {tipo:"AVE + bus", icono:"🚆", tiempo:4, precio:60},
+            {tipo:"Bus", icono:"🚌", tiempo:7, precio:30},
+            {tipo:"Avión + bus", icono:"✈️", tiempo:3, precio:80}
+        ],
+        barcelona: [
+            {tipo:"Avión + bus", icono:"✈️", tiempo:3, precio:70},
+            {tipo:"Bus", icono:"🚌", tiempo:12, precio:50}
+        ],
+        valencia: [
+            {tipo:"AVE + bus", icono:"🚆", tiempo:5, precio:65}
+        ]
+    };
+
+    const contenedor = document.getElementById("resultado");
+    const ia = document.getElementById("ia");
+
+    if (!rutas[origen]) {
+        contenedor.innerHTML = "<p>⚠️ No hay datos internos para esta ciudad</p>";
+        ia.innerHTML = "";
+        return;
+    }
+
+    let opciones = rutas[origen];
+
+    let masRapido = opciones.reduce((a,b)=> a.tiempo < b.tiempo ? a : b);
+    let masBarato = opciones.reduce((a,b)=> a.precio < b.precio ? a : b);
+
+    contenedor.innerHTML = "";
+
+    opciones.forEach(op => {
+
+        let clase = "card";
+        if (op === masRapido || op === masBarato) clase += " recomendada";
+
+        let etiqueta = "";
+        if (op === masRapido) etiqueta = "⚡ MÁS RÁPIDO";
+        if (op === masBarato) etiqueta = "💸 MÁS BARATO";
+
+        contenedor.innerHTML += `
+        <div class="${clase}">
+            <h3>${op.icono} ${op.tipo}</h3>
+            <p>⏱ ${op.tiempo}h</p>
+            <p>💰 ${op.precio}€</p>
+            <strong>${etiqueta}</strong>
+        </div>
+        `;
+    });
+
+    let recomendacion = (masRapido.precio <= masBarato.precio + 15)
+        ? `Te recomiendo <strong>${masRapido.tipo}</strong> porque es más rápido.`
+        : `Te recomiendo <strong>${masBarato.tipo}</strong> porque es más barato.`;
+
+    ia.innerHTML = "🤖 " + recomendacion;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="idioma">
+    <a href="pagina4-gal.html" class="lang gal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Galicia.svg" alt="Galego">
+        <span>GAL</span>
+    </a>
+
+    <a href="pagina4.html" class="lang es active">
+        <img src="https://flagcdn.com/es.svg" alt="Español">
+        <span>ES</span>
+    </a>
+
+    <a href="pagina4-en.html" class="lang en">
+        <img src="https://flagcdn.com/gb.svg" alt="English">
+        <span>EN</span>
+    </a>
+</div>
+
+<div id="navbar-placeholder"></div>
+
+<div class="contenido">
+
+<h1>Cómo llegar a Lugo</h1>
+
+<h2>Planifica tu viaje</h2>
+
+<input type="text" id="origen" placeholder="¿Desde dónde viajas? (ej: Madrid)">
+
+<button onclick="buscarTodo()">Buscar rutas</button>
+
+<!-- 🌍 BOTONES EXTERNOS -->
+<div class="plataformas" id="plataformas">
+
+    <a id="btnMaps" target="_blank">
+        <div class="boton-plataforma maps">🗺️ Google Maps</div>
+    </a>
+
+    <a id="btnOmio" target="_blank">
+        <div class="boton-plataforma omio">🚆 Omio</div>
+    </a>
+
+    <a id="btnRome2Rio" target="_blank">
+        <div class="boton-plataforma rome2rio">🌍 Rome2Rio</div>
+    </a>
+
+</div>
+
+<!-- 🤖 RESULTADOS -->
+<div id="resultado"></div>
+<div id="ia"></div>
+
+</div>
+
+<footer class="contacto">
+    <h2>Contacto</h2>
+    <p>📧 <a href="mailto:fuxal2026@gmail.com">fuxal2026@gmail.com</a></p>
+    <p>💬 <a href="https://wa.me/34722229413" target="_blank">Enviar mensaje</a></p>
+    <p>📞 <a href="tel:+34657974937">+34 657 97 49 37</a></p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

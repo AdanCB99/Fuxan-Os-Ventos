@@ -1,0 +1,212 @@
+.week-calendar {
+  --week-calendar-bg: #ffffff;
+  --week-calendar-border: #d9e1ec;
+  --week-calendar-text: #1f2937;
+  --week-calendar-muted: #6b7280;
+  --week-calendar-accent: #2563eb;
+  --week-calendar-accent-soft: #dbeafe;
+  --week-calendar-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--week-calendar-bg);
+  border: 1px solid var(--week-calendar-border);
+  border-radius: 16px;
+  box-shadow: var(--week-calendar-shadow);
+  color: var(--week-calendar-text);
+  overflow: hidden;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.week-calendar,
+.week-calendar * {
+  box-sizing: border-box;
+}
+
+.week-calendar__header {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--week-calendar-border);
+  background: #f8fbff;
+}
+
+.week-calendar__title {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.week-calendar__subtitle {
+  margin: 6px 0 0;
+  font-size: 0.92rem;
+  color: var(--week-calendar-muted);
+}
+
+.week-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  min-width: 0;
+}
+
+.week-calendar__day {
+  position: relative;
+  min-width: 0;
+  padding: 14px;
+  border-right: 1px solid var(--week-calendar-border);
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.week-calendar__day:last-child {
+  border-right: none;
+}
+
+.week-calendar__day:hover,
+.week-calendar__day:focus-visible {
+  background: #f8fbff;
+}
+
+.week-calendar__day:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--week-calendar-accent);
+}
+
+.week-calendar__day.is-expanded {
+  background: #ffffff;
+  box-shadow: inset 0 0 0 2px var(--week-calendar-accent-soft);
+}
+
+.week-calendar__day-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.week-calendar__day-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.week-calendar__date {
+  margin-top: 2px;
+  font-size: 0.82rem;
+  color: var(--week-calendar-muted);
+}
+
+.week-calendar__count {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--week-calendar-accent);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.week-calendar__preview-list {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.week-calendar__preview {
+  display: inline-block;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--week-calendar-accent-soft);
+  color: var(--week-calendar-accent);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.week-calendar__empty {
+  font-size: 0.8rem;
+  color: var(--week-calendar-muted);
+}
+
+.week-calendar__details {
+  display: none;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--week-calendar-border);
+}
+
+.week-calendar__day.is-expanded .week-calendar__details {
+  display: block;
+}
+
+.week-calendar__event + .week-calendar__event {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--week-calendar-border);
+}
+
+.week-calendar__details-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.week-calendar__details-text {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--week-calendar-text);
+}
+
+@media (max-width: 900px) {
+  .week-calendar__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+	min-width: 0;
+  }
+
+  .week-calendar__day {
+    border-right: 1px solid var(--week-calendar-border);
+    border-bottom: 1px solid var(--week-calendar-border);
+	min-width: 0;
+  }
+
+  .week-calendar__day:nth-child(2n) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .week-calendar__header {
+    padding: 16px;
+  }
+
+  .week-calendar__title {
+    font-size: 1.05rem;
+  }
+
+  .week-calendar__subtitle {
+    font-size: 0.85rem;
+  }
+
+  .week-calendar__grid {
+    grid-template-columns: 1fr;
+	min-width: 0;
+  }
+
+  .week-calendar__day {
+    border-right: none;
+    padding: 14px 16px;
+	min-width: 0;
+  }
+
+  .week-calendar__preview {
+    white-space: normal;
+    border-radius: 10px;
+  }
+}

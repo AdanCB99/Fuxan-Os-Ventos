@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 📱 RESPONSIVE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Premios</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<div class="idioma">
+    <a href="premios-gal.html" class="lang gal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Galicia.svg" alt="Galego">
+        <span>GAL</span>
+    </a>
+
+    <a href="premios.html" class="lang es active">
+        <img src="https://flagcdn.com/es.svg" alt="Español">
+        <span>ES</span>
+    </a>
+
+    <a href="premios-en.html" class="lang en">
+        <img src="https://flagcdn.com/gb.svg" alt="English">
+        <span>EN</span>
+    </a>
+</div>
+
+<div id="navbar-placeholder"></div>
+
+<div class="contenido">
+
+<h1 id="contador" class="animar zoom">💰 0€ en premios</h1>
+
+<h2 class="animar">🏆 Categoría Absoluta</h2>
+
+<div class="podio animar" id="podio">
+    <div class="puesto segundo">
+        <h2>🥈 2º</h2>
+        <p>1200€</p>
+    </div>
+
+    <div class="puesto primero">
+        <h2>🥇 1º</h2>
+        <p>1500€</p>
+    </div>
+
+    <div class="puesto tercero">
+        <h2>🥉 3º</h2>
+        <p>900€</p>
+    </div>
+</div>
+
+<table class="tabla-premios animar derecha">
+    <tr><td>4º</td><td>750€</td></tr>
+    <tr><td>5º</td><td>600€</td></tr>
+    <tr><td>6º</td><td>500€</td></tr>
+    <tr><td>7º</td><td>400€</td></tr>
+    <tr><td>8º</td><td>200€</td></tr>
+    <tr><td>9º</td><td>100€</td></tr>
+    <tr><td>10º</td><td>100€</td></tr>
+</table>
+
+<h2 class="animar zoom">Categorías Especiales</h2>
+
+<div class="categorias animar">
+    <div class="categoria-card">
+        <h2>Sub2000</h2>
+        <p>🥇 150€</p>
+        <p>🥈 100€</p>
+    </div>
+
+    <div class="categoria-card">
+        <h2>Sub1800</h2>
+        <p>🥇 150€</p>
+        <p>🥈 100€</p>
+    </div>
+</div>
+
+</div>
+
+<footer class="contacto animar">
+    <h2>Contacto</h2>
+    <p>📧 <a href="mailto:fuxal2026@gmail.com">fuxal2026@gmail.com</a></p>
+    <p>💬 <a href="https://wa.me/34722229413">Enviar mensaje</a></p>
+    <p>📞 <a href="tel:+34657974937">+34 657 97 49 37</a></p>
+</footer>
+
+<script>
+// 🔊 SONIDO
+function reproducirSonido() {
+    const audio = new Audio("https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3");
+    audio.play();
+}
+
+// 💰 CONTADOR
+let total = 6750;
+let contador = document.getElementById("contador");
+let i = 0;
+
+let intervalo = setInterval(() => {
+    i += 50;
+    contador.innerHTML = "💰 " + i + "€ en premios";
+    if (i >= total) {
+        contador.innerHTML = "💰 6750€ en premios";
+        clearInterval(intervalo);
+        reproducirSonido(); // 🔊 aquí suena
+        animarPodio(); // 🎬 animación podio
+    }
+}, 20);
+
+// 🎬 ANIMACIÓN PODIO
+function animarPodio() {
+    const puestos = document.querySelectorAll(".puesto");
+
+    puestos.forEach((p, i) => {
+        p.style.transform = "translateY(50px)";
+        p.style.opacity = "0";
+
+        setTimeout(() => {
+            p.style.transition = "all 0.6s ease";
+            p.style.transform = "translateY(0)";
+            p.style.opacity = "1";
+        }, i * 200);
+    });
+}
+
+// ✨ SCROLL
+const elementos = document.querySelectorAll('.animar');
+
+const mostrarElemento = () => {
+    const alturaPantalla = window.innerHeight;
+
+    elementos.forEach(el => {
+        const distancia = el.getBoundingClientRect().top;
+        if (distancia < alturaPantalla - 100) {
+            el.classList.add('visible');
+        }
+    });
+};
+
+window.addEventListener('scroll', mostrarElemento);
+window.addEventListener('load', mostrarElemento);
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+	<title>Calendario | Fuxan os Ventos International Chess Open</title>
+	
+    <!-- 📱 RESPONSIVE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calendario</title>
+	<link rel="stylesheet" href="estilos.css" />
+	<link rel="stylesheet" href="calendario.css">
+</head>
+
+<body>
+
+<div class="idioma">
+    <a href="calendario-gal.html" class="lang gal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Galicia.svg" alt="Galego">
+        <span>GAL</span>
+    </a>
+
+    <a href="calendario.html" class="lang es active">
+        <img src="https://flagcdn.com/es.svg" alt="Español">
+        <span>ES</span>
+    </a>
+
+    <a href="calendario-en.html" class="lang en">
+        <img src="https://flagcdn.com/gb.svg" alt="English">
+        <span>EN</span>
+    </a>
+</div>
+
+<div id="navbar-placeholder"></div>
+
+<div class="contenido">
+
+<h1>📅 Calendario</h1>
+
+	<div class="week-calendar" id="weekCalendar">
+	<div class="week-calendar__header">
+	  <h2 class="week-calendar__title">Semana de Julio 13–19</h2>
+	  <p class="week-calendar__subtitle">Pulsa en un día para ver los eventos</p>
+	</div>
+
+	<div class="week-calendar__grid" id="weekCalendarGrid"></div>
+	</div>
+
+	<script>
+	(() => {
+	  const grid = document.getElementById("weekCalendarGrid");
+
+	  const days = [
+		{
+		  dayName: "Lun",
+		  dateLabel: "Jul 13",
+		  events: [
+			{
+				preview: "Ronda 1 (17:00)",
+				title: "Ronda 1 (17:00)",
+				details: "Ronda 1 lunes 13 de Julio a las 17:00"
+			}
+		  ]
+		},
+		{
+		  dayName: "Mar",
+		  dateLabel: "Jul 14",
+		  events: [
+			{
+				preview: "Ronda 2 (10:00)",
+				title: "Ronda 2 (10:00)",
+				details: "Ronda 2 martes 14 de Julio a las 10:00"
+			},
+			{
+				preview: "Ronda 3 (17:00)",
+				title: "Ronda 3 (17:00)",
+				details: "Ronda 3 martes 14 de Julio a las 17:00"
+			}
+		  ]
+		},
+		{
+		  dayName: "Mie",
+		  dateLabel: "Jul 15",
+		  events: [
+			{
+				preview: "Ronda 4 (17:00)",
+				title: "Ronda 4 (17:00)",
+				details: "Ronda 4 miércoles 15 de Julio a las 17:00"
+			}
+		  ]
+		},
+		{
+		  dayName: "Jue",
+		  dateLabel: "Jul 16",
+		  events: [
+			{
+				preview: "Ronda 5 (10:00)",
+				title: "Ronda 5 (10:00)",
+				details: "Ronda 5 jueves 16 de Julio a las 10:00"
+			},
+			{
+				preview: "Ronda 6 (17:00)",
+				title: "Ronda 6 (17:00)",
+				details: "Ronda 6 jueves 16 de Julio a las 17:00"
+			}
+		  ]
+		},
+		{
+		  dayName: "Vie",
+		  dateLabel: "Jul 17",
+		  events: [
+			{
+				preview: "Ronda 7 (17:00)",
+				title: "Ronda 7 (17:00)",
+				details: "Ronda 7 viernes 17 de Julio a las 17:00"
+			},
+			{
+				preview: "Torneo Rápidas (22:00)",
+				title: "Torneo Rápidas (22:00)",
+				details: "Torneo de rápidas 5+3 a las 22:00 en un bar asociado a la organización"
+			}
+		  ]
+		},
+		{
+		  dayName: "Sab",
+		  dateLabel: "Jul 18",
+		  events: [
+			{
+				preview: "Ronda 8 (17:00)",
+				title: "Ronda 8 (17:00)",
+				details: "Ronda 8 sábado 18 de Julio a las 17:00"
+			}
+		  ]
+		},
+		{
+		  dayName: "Dom",
+		  dateLabel: "Jul 19",
+		  events: [
+			{
+				preview: "Ronda 9 (9:30)",
+				title: "Ronda 9 (9:30)",
+				details: "Ronda 9 domingo 19 de Julio a las 9:30"
+			},
+			{
+				preview: "Clausura (14:00)",
+				title: "Clausura (14:00)",
+				details: "Entrega de premios y ceremonia de clausura 19 de Julio a las 14:00"
+			}
+		  ]
+		}
+	  ];
+
+	  let expandedCard = null;
+
+	  function collapseExpandedCard() {
+		if (expandedCard) {
+		  expandedCard.classList.remove("is-expanded");
+		  expandedCard = null;
+		}
+	  }
+
+	  function escapeHtml(value) {
+		return String(value)
+		  .replace(/&/g, "&amp;")
+		  .replace(/</g, "&lt;")
+		  .replace(/>/g, "&gt;")
+		  .replace(/"/g, "&quot;")
+		  .replace(/'/g, "&#039;");
+	  }
+
+	  function renderWeek() {
+		grid.innerHTML = "";
+
+		days.forEach((item) => {
+		  const card = document.createElement("article");
+		  card.className = "week-calendar__day";
+		  card.tabIndex = 0;
+		  card.setAttribute("role", "button");
+		  card.setAttribute("aria-expanded", "false");
+		  card.setAttribute(
+			"aria-label",
+			`${item.dayName} ${item.dateLabel}, ${item.events.length} event${item.events.length === 1 ? "" : "s"}`
+		  );
+
+		  const previewsHtml = item.events.length
+			? item.events
+				.map(
+				  (event) => `
+					<div class="week-calendar__preview">${escapeHtml(event.preview)}</div>
+				  `
+				)
+				.join("")
+			: `<div class="week-calendar__empty">No events</div>`;
+
+		  const detailsHtml = item.events.length
+			? item.events
+				.map(
+				  (event) => `
+					<div class="week-calendar__event">
+					  <div class="week-calendar__details-title">${escapeHtml(event.title)}</div>
+					  <div class="week-calendar__details-text">${escapeHtml(event.details)}</div>
+					</div>
+				  `
+				)
+				.join("")
+			: `<div class="week-calendar__details-text">Nothing scheduled for this day.</div>`;
+
+		  card.innerHTML = `
+			<div class="week-calendar__day-top">
+			  <div>
+				<div class="week-calendar__day-name">${escapeHtml(item.dayName)}</div>
+				<div class="week-calendar__date">${escapeHtml(item.dateLabel)}</div>
+			  </div>
+			  <span class="week-calendar__count" aria-hidden="true">${item.events.length}</span>
+			</div>
+
+			<div class="week-calendar__preview-list">
+			  ${previewsHtml}
+			</div>
+
+			<div class="week-calendar__details">
+			  ${detailsHtml}
+			</div>
+		  `;
+
+		  card.addEventListener("click", (event) => {
+			event.stopPropagation();
+
+			const alreadyExpanded = card.classList.contains("is-expanded");
+
+			if (expandedCard && expandedCard !== card) {
+			  expandedCard.classList.remove("is-expanded");
+			  expandedCard.setAttribute("aria-expanded", "false");
+			}
+
+			if (alreadyExpanded) {
+			  card.classList.remove("is-expanded");
+			  card.setAttribute("aria-expanded", "false");
+			  expandedCard = null;
+			} else {
+			  card.classList.add("is-expanded");
+			  card.setAttribute("aria-expanded", "true");
+			  expandedCard = card;
+			}
+		  });
+
+		  card.addEventListener("keydown", (event) => {
+			if (event.key === "Enter" || event.key === " ") {
+			  event.preventDefault();
+			  card.click();
+			}
+		  });
+
+		  grid.appendChild(card);
+		});
+	  }
+
+	  document.addEventListener("click", (event) => {
+		if (!event.target.closest(".week-calendar__day")) {
+		  if (expandedCard) {
+			expandedCard.setAttribute("aria-expanded", "false");
+		  }
+		  collapseExpandedCard();
+		}
+	  });
+
+	  renderWeek();
+	})();
+	</script>
+
+	<noscript>
+		<p>
+		El torneo se jugará a <strong>9 rondas</strong> de sistema Suizo, 
+		<strong>el martes y el jueves se jugará doble ronda.</strong>
+		</p>
+
+		<p><strong>1ª Ronda:</strong> Lunes 13 de Julio a las 17:00</p>
+		<p><strong>2ª Ronda:</strong> Martes 14 de Julio a las 10:00</p>
+		<p><strong>3ª Ronda:</strong> Martes 14 de Julio a las 17:00</p>
+		<p><strong>4ª Ronda:</strong> Miércoles 15 de Julio a las 17:00</p>
+		<p><strong>5ª Ronda:</strong> Jueves 16 de Julio a las 10:00</p>
+		<p><strong>6ª Ronda:</strong> Jueves 16 de Julio a las 17:00</p>
+		<p><strong>7ª Ronda:</strong> Viernes 17 de Julio a las 17:00</p>
+		<p><strong>8ª Ronda:</strong> Sábado 18 de Julio a las 17:00</p>
+		<p><strong>9ª Ronda:</strong> Domingo 19 de Julio a las 9:30</p>
+
+	</noscript>
+</div>
+
+<p style="text-align:center; margin-top:20px;">
+  <a href="webcal://openajedrezfuxanosventoslugo.com/fuxal-2026.ics" class="btn-calendario">
+    📅 Añade todo el calendario a Google Calendar
+  </a>
+</p>
+
+<p style="text-align:center; margin-top:10px;">
+  <a href="https://openajedrezfuxanosventoslugo.com/fuxal-2026.ics" download class="btn-calendario">
+    ⬇️ Descarga el calendario (.ics) como fallback
+  </a>
+</p>
+
+<footer class="contacto">
+    <h2>Contacto</h2>
+
+    <p>
+        📧 Email: 
+        <a href="mailto:fuxal2026@gmail.com">fuxal2026@gmail.com</a>
+    </p>
+
+    <p>
+        💬 WhatsApp: 
+        <a href="https://wa.me/34722229413" target="_blank">
+            Enviar mensaje
+        </a>
+    </p>
+
+    <p>
+        📞 Teléfono: 
+        <a href="tel:+34657974937">
+            Llamar al +34 657 97 49 37
+        </a>
+    </p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

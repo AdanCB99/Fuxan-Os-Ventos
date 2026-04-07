@@ -1,0 +1,126 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fuxal 2026//Chess Open//ES
+CALSCALE:GREGORIAN
+
+BEGIN:VEVENT
+UID:fuxal2026- apertura@fuxal
+SUMMARY:Fuxal 2026 – Ceremonia de Apertura
+DTSTART;TZID=Europe/Madrid:20260713T164000
+DTEND;TZID=Europe/Madrid:20260713T170000
+LOCATION:Auditorio municipal Fuxan os Ventos, Lugo
+GEO:43.0097;-7.5560
+DESCRIPTION:Ceremonia de Apertura
+END:VEVENT
+
+BEGIN:VEVENT
+UID:fuxal2026-r1@fuxal
+SUMMARY:Fuxal 2026 – Ronda 1
+DTSTART;TZID=Europe/Madrid:20260713T170000
+DTEND;TZID=Europe/Madrid:20260713T210000
+LOCATION:Auditorio municipal Fuxan os Ventos, Lugo
+GEO:43.0097;-7.5560
+DESCRIPTION:Torneo Fuxal 2026\nOrganiza: Escola Luguesa de Xadrez\nRitmo de juego: 90'+30''\nSistema: Suizo a 9 rondas\nÁrbitro principal: Óscar Bruno De Prado Rodríguez\nWeb: https://openajedrezfuxanosventoslugo.com/\nContacto: fuxal2026@gmail.com
+END:VEVENT
+
+BEGIN:VEVENT
+UID:fuxal2026-r2@fuxal
+SUMMARY:Fuxal 2026 – Ronda 2
+DTSTART;TZID=Europe/Madrid:20260714T100000
+DTEND;TZID=Europe/Madrid:20260714T140000
+LOCATION:Auditorio municipal Fuxan os Ventos, Lugo
+GEO:43.0097;-7.5560
+DESCRIPTION:Ronda 2\nTorneo Fuxal 2026
+END:VEVENT
+
+BEGIN:VEVENT
+UID:fuxal2026-r3@fuxal
+SUMMARY:Fuxal 2026 – Ronda 3
+DTSTART;TZID=Europe/Madrid:20260714T170000
+DTEND;TZID=Europe/Madrid:20260714T210000
+LOCATION:Auditorio municipal Fuxan os Ventos, Lugo
+GEO:43.0097;-7.5560
+DESCRIPTION:Ronda 3\nTorneo Fuxal 2026
+END:VEVENT
+
+BEGIN:VEVENT
+UID:fuxal2026-r4@fuxal
+SUMMARY:Fuxal 2026 – Ronda 4
+DTSTART;TZID=Europe/Madrid:20260715T170000
+DTEND;TZID=Europe/Madrid:20260715T210000
+LOCATION:Auditorio municipal Fuxan os Ventos, Lugo
+GEO:43.0097;-7.5560
+DESCRIPTION:Ronda 4\nTorneo Fuxal 2026
+END:VEVENT
+
+BEGIN:VEVENT
+UID:fuxal2026-r5@fuxal
+SUMMARY:Fuxal 2026 – Ronda 5
+DTSTART;TZID=Europe/Madrid:20260716T100000
+DTEND;TZID=Europe/Madrid:20260716T140000
+LOCATION:Auditorio municipal Fuxan os Ventos, Lugo
+GEO:43.0097;-7.5560
+DESCRIPTION:Ronda 5\nTorneo Fuxal 2026
+END:VEVENT
+
+BEGIN:VEVENT
+UID:fuxal2026-r6@fuxal
+SUMMARY:Fuxal 2026 – Ronda 6
+DTSTART;TZID=Europe/Madrid:20260716T170000
+DTEND;TZID=Europe/Madrid:20260716T210000
+LOCATION:Auditorio municipal Fuxan os Ventos, Lugo
+GEO:43.0097;-7.5560
+DESCRIPTION:Ronda 6\nTorneo Fuxal 2026
+END:VEVENT
+
+BEGIN:VEVENT
+UID:fuxal2026-r7@fuxal
+SUMMARY:Fuxal 2026 – Ronda 7
+DTSTART;TZID=Europe/Madrid:20260717T170000
+DTEND;TZID=Europe/Madrid:20260717T210000
+LOCATION:Auditorio municipal Fuxan os Ventos, Lugo
+GEO:43.0097;-7.5560
+DESCRIPTION:Ronda 7\nTorneo Fuxal 2026
+END:VEVENT
+
+BEGIN:VEVENT
+UID:fuxal2026-blitz@fuxal
+SUMMARY:Fuxal 2026 – Torneo de Rápidas
+DTSTART;TZID=Europe/Madrid:20260717T220000
+DTEND;TZID=Europe/Madrid:20260718T010000
+LOCATION:Lugo (bar Bora Bora)
+GEO:43.0097;-7.5560
+DESCRIPTION:Torneo de rápidas 5+3\nOrganiza: Escola Luguesa de Xadrez\nParte del Fuxal 2026
+END:VEVENT
+
+BEGIN:VEVENT
+UID:fuxal2026-r8@fuxal
+SUMMARY:Fuxal 2026 – Ronda 8
+DTSTART;TZID=Europe/Madrid:20260718T170000
+DTEND;TZID=Europe/Madrid:20260718T210000
+LOCATION:Auditorio municipal Fuxan os Ventos, Lugo
+GEO:43.0097;-7.5560
+DESCRIPTION:Ronda 8\nTorneo Fuxal 2026
+END:VEVENT
+
+BEGIN:VEVENT
+UID:fuxal2026-r9@fuxal
+SUMMARY:Fuxal 2026 – Ronda 9
+DTSTART;TZID=Europe/Madrid:20260719T093000
+DTEND;TZID=Europe/Madrid:20260719T133000
+LOCATION:Auditorio municipal Fuxan os Ventos, Lugo
+GEO:43.0097;-7.5560
+DESCRIPTION:Ronda 9\nTorneo Fuxal 2026
+END:VEVENT
+
+BEGIN:VEVENT
+UID:fuxal2026-clausura@fuxal
+SUMMARY:Fuxal 2026 – Clausura
+DTSTART;TZID=Europe/Madrid:20260719T140000
+DTEND;TZID=Europe/Madrid:20260719T143000
+LOCATION:Auditorio municipal Fuxan os Ventos, Lugo
+GEO:43.0097;-7.5560
+DESCRIPTION:Entrega de premios e clausura\nGracias por participar
+END:VEVENT
+
+END:VCALENDAR
