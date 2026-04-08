@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="gl">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Como chegar a Lugo</title>
+<title>Cómo llegar a Lugo</title>
 
 <link rel="stylesheet" href="estilos.css">
 
@@ -81,7 +81,7 @@ function buscarTodo() {
     const origen = document.getElementById("origen").value.trim().toLowerCase();
 
     if (!origen) {
-        alert("Escribe dende onde viaxas");
+        alert("Escribe desde dónde viajas");
         return;
     }
 
@@ -120,7 +120,7 @@ function buscarTodo() {
     const ia = document.getElementById("ia");
 
     if (!rutas[origen]) {
-        contenedor.innerHTML = "<p>⚠️ Non hai datos internos para esta cidade</p>";
+        contenedor.innerHTML = "<p>⚠️ No hay datos internos para esta ciudad</p>";
         ia.innerHTML = "";
         return;
     }
@@ -138,8 +138,8 @@ function buscarTodo() {
         if (op === masRapido || op === masBarato) clase += " recomendada";
 
         let etiqueta = "";
-        if (op === masRapido) etiqueta = "⚡ MÁIS RÁPIDO";
-        if (op === masBarato) etiqueta = "💸 MÁIS BARATO";
+        if (op === masRapido) etiqueta = "⚡ MÁS RÁPIDO";
+        if (op === masBarato) etiqueta = "💸 MÁS BARATO";
 
         contenedor.innerHTML += `
         <div class="${clase}">
@@ -152,8 +152,8 @@ function buscarTodo() {
     });
 
     let recomendacion = (masRapido.precio <= masBarato.precio + 15)
-        ? `Recoméndoche <strong>${masRapido.tipo}</strong> porque é máis rápido.`
-        : `Recoméndoche <strong>${masBarato.tipo}</strong> porque é máis barato.`;
+        ? `Te recomiendo <strong>${masRapido.tipo}</strong> porque es más rápido.`
+        : `Te recomiendo <strong>${masBarato.tipo}</strong> porque es más barato.`;
 
     ia.innerHTML = "🤖 " + recomendacion;
 }
@@ -164,17 +164,17 @@ function buscarTodo() {
 <body>
 
 <div class="idioma">
-    <a href="pagina4-gal.html" class="lang gal active">
+    <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-gal.html" class="lang gal">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Galicia.svg" alt="Galego">
         <span>GAL</span>
     </a>
 
-    <a href="pagina4.html" class="lang es">
+    <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos.html" class="lang es active">
         <img src="https://flagcdn.com/es.svg" alt="Español">
         <span>ES</span>
     </a>
 
-    <a href="pagina4-en.html" class="lang en">
+    <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-en.html" class="lang en">
         <img src="https://flagcdn.com/gb.svg" alt="English">
         <span>EN</span>
     </a>
@@ -184,15 +184,15 @@ function buscarTodo() {
 
 <div class="contenido">
 
-<h1>Como chegar a Lugo</h1>
+<h1>Cómo llegar a Lugo</h1>
 
-<h2>Planifica a túa viaxe</h2>
+<h2>Planifica tu viaje</h2>
 
-<input type="text" id="origen" placeholder="Dende onde viaxas? (ex: Madrid)">
+<input type="text" id="origen" placeholder="¿Desde dónde viajas? (ej: Madrid)">
 
 <button onclick="buscarTodo()">Buscar rutas</button>
 
-<!-- 🌍 BOTÓNS EXTERNOS -->
+<!-- 🌍 BOTONES EXTERNOS -->
 <div class="plataformas" id="plataformas">
 
     <a id="btnMaps" target="_blank">
@@ -218,7 +218,7 @@ function buscarTodo() {
 <footer class="contacto">
     <h2>Contacto</h2>
     <p>📧 <a href="mailto:fuxal2026@gmail.com">fuxal2026@gmail.com</a></p>
-    <p>💬 <a href="https://wa.me/34722229413" target="_blank">Enviar mensaxe</a></p>
+    <p>💬 <a href="https://wa.me/34722229413" target="_blank">Enviar mensaje</a></p>
     <p>📞 <a href="tel:+34657974937">+34 657 97 49 37</a></p>
 </footer>
 

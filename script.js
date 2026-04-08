@@ -103,7 +103,7 @@ function buildNavbar(lang) {
 	<a href="${getLocalizedHref(lang, "calendario.html", "calendario-en.html", "calendario-gal.html")}">${t.calendar}</a>
         <a href="${getLocalizedHref(lang, "pagina3.html", "pagina3-en.html", "pagina3-gal.html")}">${t.accommodation}</a>
         <a href="${getLocalizedHref(lang, "actividades-complementarias-torneo-ajedrez-lugo-fuxan-os-ventos.html", "actividades-complementarias-torneo-ajedrez-lugo-fuxan-os-ventos-en.html", "actividades-complementarias-torneo-ajedrez-lugo-fuxan-os-ventos-gal.html")}">${t.extraActivities}</a>
-        <a href="${getLocalizedHref(lang, "pagina4.html", "pagina4-en.html", "pagina4-gal.html")}">${t.directions}</a>
+        <a href="${getLocalizedHref(lang, "llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos.html", "llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-en.html", "llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-gal.html")}">${t.directions}</a>
       </div>
     </div>
   `;
