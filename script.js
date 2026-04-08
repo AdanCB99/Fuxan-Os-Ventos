@@ -102,7 +102,7 @@ function buildNavbar(lang) {
         <a href="${getLocalizedHref(lang, "local.html", "local-en.html", "local-gal.html")}">${t.venue}</a>
 	<a href="${getLocalizedHref(lang, "calendario.html", "calendario-en.html", "calendario-gal.html")}">${t.calendar}</a>
         <a href="${getLocalizedHref(lang, "pagina3.html", "pagina3-en.html", "pagina3-gal.html")}">${t.accommodation}</a>
-        <a href="${getLocalizedHref(lang, "actividades-complementarias.html", "actividades-complementarias-en.html", "actividades-complementarias-gal.html")}">${t.extraActivities}</a>
+        <a href="${getLocalizedHref(lang, "actividades-complementarias-torneo-ajedrez-lugo-fuxan-os-ventos.html", "actividades-complementarias-torneo-ajedrez-lugo-fuxan-os-ventos-en.html", "actividades-complementarias-torneo-ajedrez-lugo-fuxan-os-ventos-gal.html")}">${t.extraActivities}</a>
         <a href="${getLocalizedHref(lang, "pagina4.html", "pagina4-en.html", "pagina4-gal.html")}">${t.directions}</a>
       </div>
     </div>
@@ -232,7 +232,8 @@ function iniciarContador() {
     const diferencia = fechaObjetivo - ahora;
 
 if (diferencia <= 0) {
-  document.querySelector(".desktop-texto").style.display = "none";
+  const desktop = document.querySelector(".desktop-texto");
+  if (desktop) desktop.style.display = "none";
   document.querySelector(".mobile-texto").style.display = "none";
   document.getElementById("mensaje-final").textContent = "🔥 ¡El torneo ha comenzado!";
   return;
@@ -247,7 +248,7 @@ function animarCambio(id, nuevoValor) {
       el.textContent = nuevoValor;
       el.style.transform = "translateY(0)";
       el.style.opacity = "1";
-    }, 150);
+    }, 150);	
   }
 }
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
