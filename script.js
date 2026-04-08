@@ -99,7 +99,7 @@ function buildNavbar(lang) {
         <a href="${getLocalizedHref(lang, "pagina2.html", "pagina2-en.html", "pagina2-gal.html")}">${t.registration}</a>
         <a href="${getLocalizedHref(lang, "bases.html", "bases-en.html", "bases-gal.html")}">${t.rules}</a>
         <a href="${getLocalizedHref(lang, "premios.html", "premios-en.html", "premios-gal.html")}">${t.prizes}</a>
-        <a href="${getLocalizedHref(lang, "local.html", "local-en.html", "local-gal.html")}">${t.venue}</a>
+        <a href="${getLocalizedHref(lang, "sala-de-juego-torneo-ajedrez-lugo-fuxan-os-ventos.html", "sala-de-juego-torneo-ajedrez-lugo-fuxan-os-ventos-en.html", "sala-de-juego-torneo-ajedrez-lugo-fuxan-os-ventos-gal.html")}">${t.venue}</a>
 	<a href="${getLocalizedHref(lang, "calendario.html", "calendario-en.html", "calendario-gal.html")}">${t.calendar}</a>
         <a href="${getLocalizedHref(lang, "pagina3.html", "pagina3-en.html", "pagina3-gal.html")}">${t.accommodation}</a>
         <a href="${getLocalizedHref(lang, "actividades-complementarias-torneo-ajedrez-lugo-fuxan-os-ventos.html", "actividades-complementarias-torneo-ajedrez-lugo-fuxan-os-ventos-en.html", "actividades-complementarias-torneo-ajedrez-lugo-fuxan-os-ventos-gal.html")}">${t.extraActivities}</a>
