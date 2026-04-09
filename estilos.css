@@ -1409,15 +1409,16 @@ summary:hover {
 @media (max-width: 768px) {
     .seccion {
         flex-direction: column;
-        padding: 30px 20px;
-    }
-
-    .img-seccion {
-        height: auto; /* 🔥 mejor en móvil */
+        gap: 15px;
     }
 
     .texto-seccion {
+        order: 1;
         text-align: center;
+    }
+
+    .img-seccion {
+        order: 2;
     }
 }
 
