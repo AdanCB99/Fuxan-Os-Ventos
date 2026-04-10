@@ -1150,7 +1150,7 @@ summary:hover {
 
 .seccion {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
 
     width: 100%;          /* 🔥 ocupa todo el ancho */
@@ -1410,6 +1410,10 @@ summary:hover {
     .seccion {
         flex-direction: column;
         gap: 15px;
+    }	
+
+    .seccion.reverse {
+        flex-direction: column;
     }
 
     .texto-seccion {
@@ -1435,5 +1439,10 @@ summary:hover {
 .seccion.fade-in:last-of-type p {
     font-size: 20px;
     opacity: 0.85;
+}
+
+.img-seccion,
+.texto-seccion {
+    flex: 1;
 }
 
