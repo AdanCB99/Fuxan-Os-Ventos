@@ -1068,7 +1068,7 @@ summary:hover {
 }
 
 .seccion.reverse {
-    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
 }
 
 .img-seccion {
@@ -1420,5 +1420,20 @@ summary:hover {
     .img-seccion {
         order: 2;
     }
+}
+
+.seccion.fade-in:last-of-type {
+    background: linear-gradient(135deg, #020617, #1e293b);
+    color: white;
+    text-align: center;
+}
+
+.seccion.fade-in:last-of-type h2 {
+    font-size: 42px;
+}
+
+.seccion.fade-in:last-of-type p {
+    font-size: 20px;
+    opacity: 0.85;
 }
 
