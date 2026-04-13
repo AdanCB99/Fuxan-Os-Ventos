@@ -91,7 +91,7 @@ function buildNavbar(lang) {
           <a class="dropbtn" href="#">${t.tourism} ▾</a>
           <div class="dropdown-content">
             <a href="${getLocalizedHref(lang, "lugo.html", "lugo-en.html", "lugo-gal.html")}">${t.tourismLugo}</a>
-            <a href="${getLocalizedHref(lang, "mariña.html", "mariña-en.html", "mariña-gal.html")}">${t.tourismMarina}</a>
+            <a href="${getLocalizedHref(lang, "marina.html", "marina-en.html", "marina-gal.html")}">${t.tourismMarina}</a>
             <a href="${getLocalizedHref(lang, "ribeira.html", "ribeira-en.html", "ribeira-gal.html")}">${t.tourismRibeira}</a>
           </div>
         </div>
