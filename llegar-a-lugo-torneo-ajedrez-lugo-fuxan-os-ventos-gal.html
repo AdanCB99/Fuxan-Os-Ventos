@@ -50,66 +50,126 @@
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="shortcut icon" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .contenido {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #0077ff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #005ed6;
+    }
+
+    .plataformas {
+      margin-top: 25px;
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .boton-plataforma {
+      display: flex;
+      justify-content: center;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .maps { background: #34a853; }
+    .omio { background: #6c2bd9; }
+    .rome2rio { background: #ff5a00; }
+
+    .card {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 12px;
+    }
+
+    .recomendada {
+      border: 2px solid #0077ff;
+    }
+  </style>
 </head>
 <body>
 
 <div class="idioma">
-    <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-gal.html" class="lang gal active">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Galicia.svg" alt="Galego">
-        <span>GAL</span>
-    </a>
+  <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-gal.html" class="lang gal active">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Galicia.svg" alt="Galego">
+    <span>GAL</span>
+  </a>
 
-    <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos.html" class="lang es">
-        <img src="https://flagcdn.com/es.svg" alt="Español">
-        <span>ES</span>
-    </a>
+  <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos.html" class="lang es">
+    <img src="https://flagcdn.com/es.svg" alt="Español">
+    <span>ES</span>
+  </a>
 
-    <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-en.html" class="lang en">
-        <img src="https://flagcdn.com/gb.svg" alt="English">
-        <span>EN</span>
-    </a>
+  <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-en.html" class="lang en">
+    <img src="https://flagcdn.com/gb.svg" alt="English">
+    <span>EN</span>
+  </a>
 </div>
 
 <div id="navbar-placeholder"></div>
 
 <div class="contenido">
+  <h1>Como chegar a Lugo</h1>
+  <h2>Planifica a túa viaxe</h2>
 
-<h1>Como chegar a Lugo</h1>
+  <input type="text" id="origen" placeholder="Dende onde viaxas? (ex: Madrid)">
+  <button type="button" onclick="buscarTodo()">Buscar rutas</button>
 
-<h2>Planifica a túa viaxe</h2>
-
-<input type="text" id="origen" placeholder="Dende onde viaxas? (ex: Madrid)">
-
-<button onclick="buscarTodo()">Buscar rutas</button>
-
-<!-- 🌍 BOTÓNS EXTERNOS -->
-<div class="plataformas" id="plataformas">
-
-    <a id="btnMaps" target="_blank">
-        <div class="boton-plataforma maps">🗺️ Google Maps</div>
+  <div class="plataformas" id="plataformas">
+    <a id="btnMaps" href="#" target="_blank" rel="noopener noreferrer">
+      <div class="boton-plataforma maps">🗺️ Google Maps</div>
     </a>
 
-    <a id="btnOmio" target="_blank">
-        <div class="boton-plataforma omio">🚆 Omio</div>
+    <a id="btnOmio" href="#" target="_blank" rel="noopener noreferrer">
+      <div class="boton-plataforma omio">🚆 Omio</div>
     </a>
 
-    <a id="btnRome2Rio" target="_blank">
-        <div class="boton-plataforma rome2rio">🌍 Rome2Rio</div>
+    <a id="btnRome2Rio" href="#" target="_blank" rel="noopener noreferrer">
+      <div class="boton-plataforma rome2rio">🌍 Rome2Rio</div>
     </a>
+  </div>
 
-</div>
-
-<!-- 🤖 RESULTADOS -->
-<div id="resultado"></div>
-<div id="ia"></div>
-
+  <div id="resultado"></div>
+  <div id="ia"></div>
 </div>
 
 <footer class="contacto">
-    <h2>Contacto</h2>
-    <p>📧 <a href="mailto:fuxal2026@gmail.com">fuxal2026@gmail.com</a></p>
-    <p>💬 <a href="https://wa.me/34722229413" target="_blank">Enviar mensaxe</a></p>
-    <p>📞 <a href="tel:+34657974937">+34 657 97 49 37</a></p>
+  <h2>Contacto</h2>
+  <p>📧 <a href="mailto:fuxal2026@gmail.com">fuxal2026@gmail.com</a></p>
+  <p>💬 <a href="https://wa.me/34722229413" target="_blank" rel="noopener noreferrer">Enviar mensaxe</a></p>
+  <p>📞 <a href="tel:+34657974937">+34 657 97 49 37</a></p>
 </footer>
 
 <script src="script.js"></script>

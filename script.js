@@ -271,3 +271,213 @@ document.addEventListener("DOMContentLoaded", function() {
         h2.classList.add("visible");
     });
 });
+
+function getTravelTexts() {
+  const lang = document.documentElement.lang?.toLowerCase();
+
+  if (lang === "en") {
+    return {
+      emptyOrigin: "Please enter where you are traveling from",
+      noData: "⚠️ No internal data available for this city yet",
+      fastest: "⚡ FASTEST",
+      cheapest: "💸 CHEAPEST",
+      recommendFast: "I recommend <strong>{tipo}</strong> because it is faster.",
+      recommendCheap: "I recommend <strong>{tipo}</strong> because it is cheaper."
+    };
+  }
+
+  if (lang === "gl") {
+    return {
+      emptyOrigin: "Escribe desde onde viaxas",
+      noData: "⚠️ Aínda non hai datos internos para esta cidade",
+      fastest: "⚡ MÁIS RÁPIDO",
+      cheapest: "💸 MÁIS BARATO",
+      recommendFast: "Recoméndoche <strong>{tipo}</strong> porque é máis rápido.",
+      recommendCheap: "Recoméndoche <strong>{tipo}</strong> porque é máis barato."
+    };
+  }
+
+  return {
+    emptyOrigin: "Escribe desde dónde viajas",
+    noData: "⚠️ Todavía no hay datos internos para esta ciudad",
+    fastest: "⚡ MÁS RÁPIDO",
+    cheapest: "💸 MÁS BARATO",
+    recommendFast: "Te recomiendo <strong>{tipo}</strong> porque es más rápido.",
+    recommendCheap: "Te recomiendo <strong>{tipo}</strong> porque es más barato."
+  };
+}
+
+function normalizarTexto(texto) {
+  return texto
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[.,]/g, "")
+    .replace(/\s+/g, " ");
+}
+
+function resolverCiudad(origen) {
+  const alias = {
+    madrid: "madrid",
+
+    barcelona: "barcelona",
+    barca: "barcelona",
+
+    valencia: "valencia",
+
+    coruna: "acoruna",
+    "a coruna": "acoruna",
+    "la coruna": "acoruna",
+    "a coruña": "acoruna",
+    "la coruña": "acoruna",
+
+    santiago: "santiago",
+    "santiago de compostela": "santiago",
+    compostela: "santiago",
+
+    oviedo: "oviedo",
+
+    bilbao: "bilbao",
+
+    lisboa: "lisboa",
+    lisbon: "lisboa",
+
+    londres: "londres",
+    london: "londres"
+  };
+
+  return alias[origen] || origen;
+}
+
+function getRutas() {
+  return {
+    madrid: [
+      { tipo: "AVE + bus", icono: "🚆", tiempo: 4, precio: 60 },
+      { tipo: "Bus", icono: "🚌", tiempo: 7, precio: 30 },
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 3, precio: 80 }
+    ],
+
+    barcelona: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 3, precio: 70 },
+      { tipo: "Bus", icono: "🚌", tiempo: 12, precio: 50 }
+    ],
+
+    valencia: [
+      { tipo: "AVE + bus", icono: "🚆", tiempo: 5, precio: 65 }
+    ],
+
+    acoruna: [
+      { tipo: "Tren", icono: "🚆", tiempo: 1.5, precio: 18 },
+      { tipo: "Bus", icono: "🚌", tiempo: 1.75, precio: 12 },
+      { tipo: "Coche", icono: "🚗", tiempo: 1.25, precio: 15 }
+    ],
+
+    santiago: [
+      { tipo: "Tren", icono: "🚆", tiempo: 2.25, precio: 20 },
+      { tipo: "Bus", icono: "🚌", tiempo: 2.5, precio: 14 },
+      { tipo: "Coche", icono: "🚗", tiempo: 2, precio: 20 }
+    ],
+
+    oviedo: [
+      { tipo: "Bus", icono: "🚌", tiempo: 3.5, precio: 22 },
+      { tipo: "Coche", icono: "🚗", tiempo: 3, precio: 30 }
+    ],
+
+    bilbao: [
+      { tipo: "Bus", icono: "🚌", tiempo: 6.5, precio: 35 },
+      { tipo: "Coche", icono: "🚗", tiempo: 5.5, precio: 55 },
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 4.5, precio: 95 }
+    ],
+
+    lisboa: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 4.5, precio: 95 },
+      { tipo: "Bus", icono: "🚌", tiempo: 10, precio: 45 }
+    ],
+
+    londres: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 5, precio: 120 }
+    ]
+  };
+}
+
+function formatearTiempo(horas) {
+  const horasEnteras = Math.floor(horas);
+  const minutos = Math.round((horas - horasEnteras) * 60);
+
+  if (minutos === 0) return `${horasEnteras}h`;
+  if (horasEnteras === 0) return `${minutos} min`;
+  return `${horasEnteras}h ${minutos} min`;
+}
+
+function buscarTodo() {
+  const origenInput = document.getElementById("origen");
+  const contenedor = document.getElementById("resultado");
+  const ia = document.getElementById("ia");
+  const plataformas = document.getElementById("plataformas");
+  const btnMaps = document.getElementById("btnMaps");
+  const btnOmio = document.getElementById("btnOmio");
+  const btnRome2Rio = document.getElementById("btnRome2Rio");
+
+  if (!origenInput || !contenedor || !ia || !plataformas || !btnMaps || !btnOmio || !btnRome2Rio) {
+    return;
+  }
+
+  const t = getTravelTexts();
+  const origenOriginal = origenInput.value.trim();
+
+  if (!origenOriginal) {
+    alert(t.emptyOrigin);
+    return;
+  }
+
+  const origenNormalizado = normalizarTexto(origenOriginal);
+  const ciudadClave = resolverCiudad(origenNormalizado);
+
+  const fecha = "2026-07-13";
+  const origenURL = encodeURIComponent(origenOriginal);
+
+  btnMaps.href = `https://www.google.com/maps/dir/?api=1&origin=${origenURL}&destination=Lugo&travelmode=transit`;
+  btnOmio.href = `https://www.omio.es/app/search-frontend/results/${origenURL}/LUG/${fecha}`;
+  btnRome2Rio.href = `https://www.rome2rio.com/es/map/${origenURL}/Lugo`;
+
+  plataformas.style.display = "flex";
+
+  const rutas = getRutas();
+
+  if (!rutas[ciudadClave]) {
+    contenedor.innerHTML = `<p>${t.noData}</p>`;
+    ia.innerHTML = "";
+    return;
+  }
+
+  const opciones = rutas[ciudadClave];
+  const masRapido = opciones.reduce((a, b) => (a.tiempo < b.tiempo ? a : b));
+  const masBarato = opciones.reduce((a, b) => (a.precio < b.precio ? a : b));
+
+  contenedor.innerHTML = "";
+
+  opciones.forEach(op => {
+    let clase = "card";
+    if (op === masRapido || op === masBarato) clase += " recomendada";
+
+    let etiqueta = "";
+    if (op === masRapido) etiqueta = t.fastest;
+    if (op === masBarato) etiqueta = t.cheapest;
+
+    contenedor.innerHTML += `
+      <div class="${clase}">
+        <h3>${op.icono} ${op.tipo}</h3>
+        <p>⏱ ${formatearTiempo(op.tiempo)}</p>
+        <p>💰 ${op.precio}€</p>
+        <strong>${etiqueta}</strong>
+      </div>
+    `;
+  });
+
+  const recomendacion = (masRapido.precio <= masBarato.precio + 15)
+    ? t.recommendFast.replace("{tipo}", masRapido.tipo)
+    : t.recommendCheap.replace("{tipo}", masBarato.tipo);
+
+  ia.innerHTML = "🤖 " + recomendacion;
+}

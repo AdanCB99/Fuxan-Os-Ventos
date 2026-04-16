@@ -1,226 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cómo llegar a Lugo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="canonical" href="https://openajedrezfuxanosventoslugo.com/">
-<link rel="stylesheet" href="estilos.css">
+  <title>Cómo llegar a Lugo | Open Internacional de Ajedrez 2026</title>
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-}
+  <meta name="description" content="Consulta cómo llegar a Lugo para participar en el Open Internacional de Ajedrez Fuxan Os Ventos 2026. Opciones de viaje, rutas y enlaces útiles para planificar tu desplazamiento.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Open Internacional Fuxan Os Ventos">
+  <meta name="theme-color" content="#0f172a">
 
-.contenido {
-    max-width: 700px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-}
+  <link rel="canonical" href="https://openajedrezfuxanosventoslugo.com/llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos.html">
 
-input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
+  <link rel="alternate" hreflang="es" href="https://openajedrezfuxanosventoslugo.com/llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos.html">
+  <link rel="alternate" hreflang="gl" href="https://openajedrezfuxanosventoslugo.com/llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-gal.html">
+  <link rel="alternate" hreflang="en" href="https://openajedrezfuxanosventoslugo.com/llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://openajedrezfuxanosventoslugo.com/llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos.html">
 
-button {
-    margin-top: 15px;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 10px;
-    background: #0077ff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Cómo llegar a Lugo | Open Internacional de Ajedrez 2026">
+  <meta property="og:description" content="Encuentra la mejor forma de viajar a Lugo para asistir al Open Fuxan Os Ventos 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://openajedrezfuxanosventoslugo.com/llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos.html">
+  <meta property="og:site_name" content="Open Fuxan Os Ventos">
+  <meta property="og:image" content="https://openajedrezfuxanosventoslugo.com/fuxan5.webp">
+  <meta property="og:image:alt" content="Cómo llegar a Lugo para el Open Internacional Fuxan Os Ventos">
 
-button:hover {
-    background: #005ed6;
-}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cómo llegar a Lugo | Open Fuxan Os Ventos 2026">
+  <meta name="twitter:description" content="Planifica tu viaje a Lugo para el torneo internacional de ajedrez.">
+  <meta name="twitter:image" content="https://openajedrezfuxanosventoslugo.com/fuxan5.jpeg">
 
-.plataformas {
-    margin-top: 25px;
-    display: none;
-    flex-direction: column;
-    gap: 12px;
-}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cómo llegar a Lugo",
+    "description": "Información y herramientas para planificar el viaje a Lugo durante el Open Internacional de Ajedrez Fuxan Os Ventos 2026.",
+    "url": "https://openajedrezfuxanosventoslugo.com/llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos.html",
+    "inLanguage": "es"
+  }
+  </script>
 
-.boton-plataforma {
-    display: flex;
-    justify-content: center;
-    padding: 14px;
-    border-radius: 12px;
-    font-weight: bold;
-    color: white;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
 
-.maps { background: #34a853; }
-.omio { background: #6c2bd9; }
-.rome2rio { background: #ff5a00; }
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
 
-.card {
-    background: white;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 12px;
-}
-
-.recomendada {
-    border: 2px solid #0077ff;
-}
-</style>
-
-<script defer>
-function buscarTodo() {
-
-    const origen = document.getElementById("origen").value.trim().toLowerCase();
-
-    if (!origen) {
-        alert("Escribe desde dónde viajas");
-        return;
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
     }
 
-    const fecha = "2026-07-13";
-    const origenURL = encodeURIComponent(origen);
-
-    // 🌍 LINKS EXTERNOS
-    document.getElementById("btnMaps").href =
-        `https://www.google.com/maps/dir/?api=1&origin=${origenURL}&destination=Lugo&travelmode=transit`;
-
-    document.getElementById("btnOmio").href =
-        `https://www.omio.es/app/search-frontend/results/${origenURL}/LUG/${fecha}`;
-
-    document.getElementById("btnRome2Rio").href =
-        `https://www.rome2rio.com/es/map/${origenURL}/Lugo`;
-
-    document.getElementById("plataformas").style.display = "flex";
-
-    // 🤖 SISTEMA DE RUTAS LOCAL
-    const rutas = {
-        madrid: [
-            {tipo:"AVE + bus", icono:"🚆", tiempo:4, precio:60},
-            {tipo:"Bus", icono:"🚌", tiempo:7, precio:30},
-            {tipo:"Avión + bus", icono:"✈️", tiempo:3, precio:80}
-        ],
-        barcelona: [
-            {tipo:"Avión + bus", icono:"✈️", tiempo:3, precio:70},
-            {tipo:"Bus", icono:"🚌", tiempo:12, precio:50}
-        ],
-        valencia: [
-            {tipo:"AVE + bus", icono:"🚆", tiempo:5, precio:65}
-        ]
-    };
-
-    const contenedor = document.getElementById("resultado");
-    const ia = document.getElementById("ia");
-
-    if (!rutas[origen]) {
-        contenedor.innerHTML = "<p>⚠️ No hay datos internos para esta ciudad</p>";
-        ia.innerHTML = "";
-        return;
+    .contenido {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
     }
 
-    let opciones = rutas[origen];
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
 
-    let masRapido = opciones.reduce((a,b)=> a.tiempo < b.tiempo ? a : b);
-    let masBarato = opciones.reduce((a,b)=> a.precio < b.precio ? a : b);
+    button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #0077ff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-    contenedor.innerHTML = "";
+    button:hover {
+      background: #005ed6;
+    }
 
-    opciones.forEach(op => {
+    .plataformas {
+      margin-top: 25px;
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-        let clase = "card";
-        if (op === masRapido || op === masBarato) clase += " recomendada";
+    .boton-plataforma {
+      display: flex;
+      justify-content: center;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: bold;
+      color: white;
+    }
 
-        let etiqueta = "";
-        if (op === masRapido) etiqueta = "⚡ MÁS RÁPIDO";
-        if (op === masBarato) etiqueta = "💸 MÁS BARATO";
+    .maps { background: #34a853; }
+    .omio { background: #6c2bd9; }
+    .rome2rio { background: #ff5a00; }
 
-        contenedor.innerHTML += `
-        <div class="${clase}">
-            <h3>${op.icono} ${op.tipo}</h3>
-            <p>⏱ ${op.tiempo}h</p>
-            <p>💰 ${op.precio}€</p>
-            <strong>${etiqueta}</strong>
-        </div>
-        `;
-    });
+    .card {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 12px;
+    }
 
-    let recomendacion = (masRapido.precio <= masBarato.precio + 15)
-        ? `Te recomiendo <strong>${masRapido.tipo}</strong> porque es más rápido.`
-        : `Te recomiendo <strong>${masBarato.tipo}</strong> porque es más barato.`;
-
-    ia.innerHTML = "🤖 " + recomendacion;
-}
-</script>
-
+    .recomendada {
+      border: 2px solid #0077ff;
+    }
+  </style>
 </head>
 
 <body>
 
 <div class="idioma">
-    <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-gal.html" class="lang gal">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Galicia.svg" alt="Galego">
-        <span>GAL</span>
-    </a>
+  <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-gal.html" class="lang gal">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Galicia.svg" alt="Galego">
+    <span>GAL</span>
+  </a>
 
-    <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos.html" class="lang es active">
-        <img src="https://flagcdn.com/es.svg" alt="Español">
-        <span>ES</span>
-    </a>
+  <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos.html" class="lang es active">
+    <img src="https://flagcdn.com/es.svg" alt="Español">
+    <span>ES</span>
+  </a>
 
-    <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-en.html" class="lang en">
-        <img src="https://flagcdn.com/gb.svg" alt="English">
-        <span>EN</span>
-    </a>
+  <a href="llegar-a-lugo-torneo-ajedrez-lugo-fuxan-os-ventos-en.html" class="lang en">
+    <img src="https://flagcdn.com/gb.svg" alt="English">
+    <span>EN</span>
+  </a>
 </div>
 
 <div id="navbar-placeholder"></div>
 
 <div class="contenido">
+  <h1>Cómo llegar a Lugo</h1>
+  <h2>Planifica tu viaje</h2>
 
-<h1>Cómo llegar a Lugo</h1>
+  <input type="text" id="origen" placeholder="¿Desde dónde viajas? (ej: Madrid)">
+  <button type="button" onclick="buscarTodo()">Buscar rutas</button>
 
-<h2>Planifica tu viaje</h2>
-
-<input type="text" id="origen" placeholder="¿Desde dónde viajas? (ej: Madrid)">
-
-<button onclick="buscarTodo()">Buscar rutas</button>
-
-<!-- 🌍 BOTONES EXTERNOS -->
-<div class="plataformas" id="plataformas">
-
-    <a id="btnMaps" target="_blank">
-        <div class="boton-plataforma maps">🗺️ Google Maps</div>
+  <div class="plataformas" id="plataformas">
+    <a id="btnMaps" href="#" target="_blank" rel="noopener noreferrer">
+      <div class="boton-plataforma maps">🗺️ Google Maps</div>
     </a>
 
-    <a id="btnOmio" target="_blank">
-        <div class="boton-plataforma omio">🚆 Omio</div>
+    <a id="btnOmio" href="#" target="_blank" rel="noopener noreferrer">
+      <div class="boton-plataforma omio">🚆 Omio</div>
     </a>
 
-    <a id="btnRome2Rio" target="_blank">
-        <div class="boton-plataforma rome2rio">🌍 Rome2Rio</div>
+    <a id="btnRome2Rio" href="#" target="_blank" rel="noopener noreferrer">
+      <div class="boton-plataforma rome2rio">🌍 Rome2Rio</div>
     </a>
+  </div>
 
-</div>
-
-<!-- 🤖 RESULTADOS -->
-<div id="resultado"></div>
-<div id="ia"></div>
-
+  <div id="resultado"></div>
+  <div id="ia"></div>
 </div>
 
 <footer class="contacto">
-    <h2>Contacto</h2>
-    <p>📧 <a href="mailto:fuxal2026@gmail.com">fuxal2026@gmail.com</a></p>
-    <p>💬 <a href="https://wa.me/34722229413" target="_blank">Enviar mensaje</a></p>
-    <p>📞 <a href="tel:+34657974937">+34 657 97 49 37</a></p>
+  <h2>Contacto</h2>
+  <p>📧 <a href="mailto:fuxal2026@gmail.com">fuxal2026@gmail.com</a></p>
+  <p>💬 <a href="https://wa.me/34722229413" target="_blank" rel="noopener noreferrer">Enviar mensaje</a></p>
+  <p>📞 <a href="tel:+34657974937">+34 657 97 49 37</a></p>
 </footer>
 
 <script src="script.js"></script>
