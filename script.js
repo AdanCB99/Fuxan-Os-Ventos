@@ -325,6 +325,40 @@ function resolverCiudad(origen) {
     barca: "barcelona",
 
     valencia: "valencia",
+    alicante: "alicante",
+
+    sevilla: "sevilla",
+    malaga: "malaga",
+    granada: "granada",
+    cordoba: "cordoba",
+    cadiz: "cadiz",
+
+    palma: "palma",
+    "palma de mallorca": "palma",
+    mallorca: "palma",
+    ibiza: "ibiza",
+
+    tenerife: "tenerife",
+    "santa cruz de tenerife": "tenerife",
+    "las palmas": "laspalmas",
+    "las palmas de gran canaria": "laspalmas",
+    grancanaria: "laspalmas",
+    "gran canaria": "laspalmas",
+
+    toledo: "toledo",
+    albacete: "albacete",
+
+    zaragoza: "zaragoza",
+    badajoz: "badajoz",
+
+    leon: "leon",
+    "leon ": "leon",
+    valladolid: "valladolid",
+
+    vigo: "vigo",
+    ourense: "ourense",
+    orense: "ourense",
+    ferrol: "ferrol",
 
     coruna: "acoruna",
     "a coruna": "acoruna",
@@ -337,7 +371,6 @@ function resolverCiudad(origen) {
     compostela: "santiago",
 
     oviedo: "oviedo",
-
     bilbao: "bilbao",
 
     lisboa: "lisboa",
@@ -352,44 +385,156 @@ function resolverCiudad(origen) {
 
 function getRutas() {
   return {
-    madrid: [
-      { tipo: "AVE + bus", icono: "🚆", tiempo: 4, precio: 60 },
-      { tipo: "Bus", icono: "🚌", tiempo: 7, precio: 30 },
-      { tipo: "Avión + bus", icono: "✈️", tiempo: 3, precio: 80 }
-    ],
 
-    barcelona: [
-      { tipo: "Avión + bus", icono: "✈️", tiempo: 3, precio: 70 },
-      { tipo: "Bus", icono: "🚌", tiempo: 12, precio: 50 }
-    ],
-
-    valencia: [
-      { tipo: "AVE + bus", icono: "🚆", tiempo: 5, precio: 65 }
-    ],
-
+    // 🔵 GALICIA
     acoruna: [
-      { tipo: "Tren", icono: "🚆", tiempo: 1.5, precio: 18 },
+      { tipo: "Coche", icono: "🚗", tiempo: 1.25, precio: 15 },
       { tipo: "Bus", icono: "🚌", tiempo: 1.75, precio: 12 },
-      { tipo: "Coche", icono: "🚗", tiempo: 1.25, precio: 15 }
+      { tipo: "Tren", icono: "🚆", tiempo: 1.5, precio: 18 }
     ],
 
     santiago: [
-      { tipo: "Tren", icono: "🚆", tiempo: 2.25, precio: 20 },
+      { tipo: "Coche", icono: "🚗", tiempo: 2, precio: 20 },
       { tipo: "Bus", icono: "🚌", tiempo: 2.5, precio: 14 },
-      { tipo: "Coche", icono: "🚗", tiempo: 2, precio: 20 }
+      { tipo: "Tren + bus", icono: "🚆", tiempo: 2.5, precio: 20 }
     ],
 
-    oviedo: [
-      { tipo: "Bus", icono: "🚌", tiempo: 3.5, precio: 22 },
-      { tipo: "Coche", icono: "🚗", tiempo: 3, precio: 30 }
+    vigo: [
+      { tipo: "Coche", icono: "🚗", tiempo: 3, precio: 30 },
+      { tipo: "Bus", icono: "🚌", tiempo: 4.25, precio: 20 },
+      { tipo: "Tren + bus", icono: "🚆", tiempo: 4, precio: 28 }
     ],
 
-    bilbao: [
-      { tipo: "Bus", icono: "🚌", tiempo: 6.5, precio: 35 },
-      { tipo: "Coche", icono: "🚗", tiempo: 5.5, precio: 55 },
-      { tipo: "Avión + bus", icono: "✈️", tiempo: 4.5, precio: 95 }
+    ourense: [
+      { tipo: "Coche", icono: "🚗", tiempo: 1.5, precio: 16 },
+      { tipo: "Bus", icono: "🚌", tiempo: 2.25, precio: 14 },
+      { tipo: "Tren", icono: "🚆", tiempo: 2.25, precio: 18 }
     ],
 
+    ferrol: [
+      { tipo: "Coche", icono: "🚗", tiempo: 2, precio: 20 },
+      { tipo: "Bus", icono: "🚌", tiempo: 2.5, precio: 14 },
+      { tipo: "Tren + bus", icono: "🚆", tiempo: 3, precio: 20 }
+    ],
+
+    // 🔴 ANDALUCÍA
+    sevilla: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 4.5, precio: 95 },
+      { tipo: "AVE + bus", icono: "🚆", tiempo: 7.5, precio: 95 },
+      { tipo: "Bus", icono: "🚌", tiempo: 14, precio: 65 }
+    ],
+
+    malaga: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 5, precio: 100 },
+      { tipo: "AVE + bus", icono: "🚆", tiempo: 8, precio: 100 },
+      { tipo: "Bus", icono: "🚌", tiempo: 15, precio: 70 }
+    ],
+
+    granada: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 5.5, precio: 105 },
+      { tipo: "Bus", icono: "🚌", tiempo: 14, precio: 68 },
+      { tipo: "Coche", icono: "🚗", tiempo: 10, precio: 90 }
+    ],
+
+    cordoba: [
+      { tipo: "AVE + bus", icono: "🚆", tiempo: 7.5, precio: 90 },
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 5, precio: 95 },
+      { tipo: "Bus", icono: "🚌", tiempo: 13, precio: 60 }
+    ],
+
+    cadiz: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 6, precio: 115 },
+      { tipo: "Bus", icono: "🚌", tiempo: 15, precio: 72 },
+      { tipo: "Coche", icono: "🚗", tiempo: 10.5, precio: 95 }
+    ],
+
+    // 🟡 BALEARES
+    palma: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 5, precio: 110 },
+      { tipo: "Avión + bus (económico)", icono: "✈️", tiempo: 6, precio: 70 }
+    ],
+
+    ibiza: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 5.5, precio: 120 },
+      { tipo: "Avión + bus (económico)", icono: "✈️", tiempo: 6.5, precio: 80 }
+    ],
+
+    // 🟣 CANARIAS
+    laspalmas: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 5.75, precio: 95 },
+      { tipo: "Avión + bus (económico)", icono: "✈️", tiempo: 6.5, precio: 60 }
+    ],
+
+    tenerife: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 6, precio: 105 },
+      { tipo: "Avión + bus (económico)", icono: "✈️", tiempo: 6.75, precio: 70 }
+    ],
+
+    // 🟠 CASTILLA LA MANCHA
+    toledo: [
+      { tipo: "AVE + bus", icono: "🚆", tiempo: 5.5, precio: 70 },
+      { tipo: "Bus", icono: "🚌", tiempo: 8, precio: 35 },
+      { tipo: "Coche", icono: "🚗", tiempo: 6, precio: 55 }
+    ],
+
+    albacete: [
+      { tipo: "AVE + bus", icono: "🚆", tiempo: 6.5, precio: 80 },
+      { tipo: "Bus", icono: "🚌", tiempo: 10, precio: 48 },
+      { tipo: "Coche", icono: "🚗", tiempo: 7.5, precio: 68 }
+    ],
+
+    // 🟠 COMUNIDAD VALENCIANA
+    valencia: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 4, precio: 85 },
+      { tipo: "AVE + bus", icono: "🚆", tiempo: 5.5, precio: 70 },
+      { tipo: "Bus", icono: "🚌", tiempo: 11, precio: 45 }
+    ],
+
+    alicante: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 4.5, precio: 90 },
+      { tipo: "AVE + bus", icono: "🚆", tiempo: 6.5, precio: 80 },
+      { tipo: "Bus", icono: "🚌", tiempo: 12.5, precio: 50 }
+    ],
+
+    // 🔵 CATALUÑA
+    barcelona: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 4, precio: 80 },
+      { tipo: "AVE + bus", icono: "🚆", tiempo: 6.5, precio: 85 },
+      { tipo: "Bus", icono: "🚌", tiempo: 13, precio: 55 }
+    ],
+
+    // 🟡 ARAGÓN
+    zaragoza: [
+      { tipo: "AVE + bus", icono: "🚆", tiempo: 6, precio: 75 },
+      { tipo: "Bus", icono: "🚌", tiempo: 10, precio: 45 }
+    ],
+
+    // 🟠 EXTREMADURA
+    badajoz: [
+      { tipo: "Avión + bus", icono: "✈️", tiempo: 5.5, precio: 110 },
+      { tipo: "Bus", icono: "🚌", tiempo: 10, precio: 45 },
+      { tipo: "Coche", icono: "🚗", tiempo: 7.5, precio: 70 }
+    ],
+
+    // 🔵 MADRID
+    madrid: [
+      { tipo: "Tren", icono: "🚆", tiempo: 4.75, precio: 75 },
+      { tipo: "Bus", icono: "🚌", tiempo: 5.6, precio: 45 },
+      { tipo: "Coche", icono: "🚗", tiempo: 5.1, precio: 55 }
+    ],
+
+    // 🟤 CASTILLA Y LEÓN (mínimo clave)
+    leon: [
+      { tipo: "Bus", icono: "🚌", tiempo: 3.5, precio: 20 },
+      { tipo: "Coche", icono: "🚗", tiempo: 3, precio: 28 }
+    ],
+
+    valladolid: [
+      { tipo: "Bus", icono: "🚌", tiempo: 5.5, precio: 25 },
+      { tipo: "Coche", icono: "🚗", tiempo: 4, precio: 40 }
+    ],
+
+    // 🌍 INTERNACIONAL
     lisboa: [
       { tipo: "Avión + bus", icono: "✈️", tiempo: 4.5, precio: 95 },
       { tipo: "Bus", icono: "🚌", tiempo: 10, precio: 45 }
@@ -398,9 +543,9 @@ function getRutas() {
     londres: [
       { tipo: "Avión + bus", icono: "✈️", tiempo: 5, precio: 120 }
     ]
+
   };
 }
-
 function formatearTiempo(horas) {
   const horasEnteras = Math.floor(horas);
   const minutos = Math.round((horas - horasEnteras) * 60);
