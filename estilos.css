@@ -1134,19 +1134,23 @@ summary:hover {
     padding-bottom: 40px;
 }
 
-.zona-blanca h1 {
-    color: #020617;
-}
-
-.zona-blanca h2
-{
+/* SOLO intro debajo de la cabecera */
+.intro-principal h1,
+.intro-principal p {
     color: #0f172a;
 }
 
-.zona-blanca p,
-.zona-blanca li,
-.zona-blanca small {
-    color: #334155;
+/* Texto sobre imágenes */
+.card-turismo.premium .contenido h3,
+.card-turismo.premium .contenido p {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.55);
+}
+
+/* CTA final oscuro */
+.seccion.fade-in:last-of-type h2,
+.seccion.fade-in:last-of-type p {
+    color: #fff;
 }
 
 .cabecera,
