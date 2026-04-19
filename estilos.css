@@ -1495,3 +1495,33 @@ summary:hover {
 .seccion.fade-in:last-of-type .texto-seccion p {
     color: #fff;
 }
+
+.zona-blanca {
+    background: white;
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+.intro-principal h1,
+.intro-principal p {
+    color: #0f172a;
+}
+
+.seccion .texto-seccion h2 {
+    color: #0f172a;
+}
+
+.seccion .texto-seccion p {
+    color: #334155;
+}
+
+.card-turismo.premium .contenido h3,
+.card-turismo.premium .contenido p {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.55);
+}
+
+.seccion.fade-in:last-of-type .texto-seccion h2,
+.seccion.fade-in:last-of-type .texto-seccion p {
+    color: #fff;
+}
