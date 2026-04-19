@@ -1030,10 +1030,13 @@ summary:hover {
 
 @media (max-width: 768px) {
     .btn-inscribete {
-        width: 100%;
+        order: 3;
+        margin: 10px auto 0;
+        width: fit-content;
         text-align: center;
         font-size: 15px;
-        padding: 12px;
+        padding: 12px 22px;
+        display: block;
     }
 }
 
@@ -1129,6 +1132,21 @@ summary:hover {
     background: white;
     margin-top: 20px;
     padding-bottom: 40px;
+}
+
+.zona-blanca h1 {
+    color: #020617;
+}
+
+.zona-blanca h2,
+.zona-blanca h3 {
+    color: #0f172a;
+}
+
+.zona-blanca p,
+.zona-blanca li,
+.zona-blanca small {
+    color: #334155;
 }
 
 .cabecera,
