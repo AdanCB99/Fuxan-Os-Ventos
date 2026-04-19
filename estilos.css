@@ -897,11 +897,6 @@ summary:hover {
     line-height: 1.6;
 }
 
-.titulo-seccion {
-    text-align: center;
-    margin-top: 50px;
-}
-
 /* =========================
    GRID TURISMO
 ========================= */
@@ -1075,24 +1070,6 @@ summary:hover {
 }
 
 /* =========================
-   BOTONES
-========================= */
-.btn-calendario {
-    display: inline-block;
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    padding: 12px 20px;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-calendario:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(59,130,246,0.5);
-}
-
-/* =========================
    PAGINA INSCRIPCIÓN
 ========================= */
 .pagina-inscripcion h2 {
@@ -1114,14 +1091,6 @@ summary:hover {
 
 .pagina-inscripcion h2.visible::after {
     width: 100%;
-}
-
-/* =========================
-   COLORES ESPECÍFICOS
-========================= */
-.intro-principal h1,
-.intro-principal p {
-    color: #0f172a;
 }
 
 /* =========================
@@ -1147,13 +1116,9 @@ summary:hover {
 .intro-principal p {
     font-size: 20px;
     line-height: 1.7;
-
-    text-align: left;              /* 🔥 clave */
-    padding-left: 18px;            /* 🔥 sangría elegante */
-
+    text-align: left;
     color: #334155;
-
-    border-left: 3px solid #3b82f6; /* 🔥 detalle premium */
+    border-left: 3px solid #3b82f6;
     padding-left: 18px;
 }
 
@@ -1177,36 +1142,97 @@ summary:hover {
     text-shadow: 0 2px 8px rgba(0,0,0,0.55);
 }
 
-.seccion.fade-in:last-of-type {
-    background: linear-gradient(135deg, #020617, #1e293b);
-    color: white;
-    text-align: center;
-}
-
-.seccion.fade-in:last-of-type h2 {
-    font-size: 42px;
-}
-
 .titulo-seccion {
     text-align: center;
     margin-top: 50px;
     color: #020617;
 }
 
-.seccion.fade-in:last-of-type p {
-    font-size: 20px;
-    opacity: 0.85;
+/* =========================
+   CTA FINAL PREMIUM
+========================= */
+
+.seccion.fade-in:last-of-type {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #020617, #1e293b);
+    color: white;
+
+    padding: 80px 5%;
+    margin-top: 80px;
 }
 
-.seccion.fade-in:last-of-type .texto-seccion h2,
-.seccion.fade-in:last-of-type .texto-seccion p {
-    color: #fff;
+/* glow sutil detrás */
+.seccion.fade-in:last-of-type::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(59,130,246,0.4), transparent 70%);
+    top: -100px;
+    left: -100px;
+    filter: blur(80px);
+    z-index: 0;
+}
+
+/* contenido por encima */
+.seccion.fade-in:last-of-type .texto-seccion {
+    position: relative;
+    z-index: 1;
+
+    max-width: 720px;
+    margin: auto;
+    text-align: center;
+}
+
+/* título */
+.seccion.fade-in:last-of-type h2 {
+    font-size: 44px;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+/* texto */
+.seccion.fade-in:last-of-type p {
+    font-size: 20px;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+/* botón PRO */
+.btn-calendario {
+    display: inline-block;
+
+    padding: 14px 28px;
+    border-radius: 999px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+
+    box-shadow: 0 0 20px rgba(59,130,246,0.5);
+
+    transition: all 0.3s ease;
+}
+
+/* hover */
+.btn-calendario:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 30px rgba(59,130,246,0.9);
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
+    .intro-principal .texto-seccion p {
+        text-align: left;
+    }
+
     .fotos {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1398,81 +1424,4 @@ summary:hover {
         padding-left: 36px;
         white-space: normal;
     }
-}
-
-/* =========================
-   CTA FINAL PREMIUM
-========================= */
-
-.seccion.fade-in:last-of-type {
-    position: relative;
-    overflow: hidden;
-
-    background: linear-gradient(135deg, #020617, #1e293b);
-    color: white;
-
-    padding: 80px 5%;
-    margin-top: 80px;
-}
-
-/* glow sutil detrás */
-.seccion.fade-in:last-of-type::before {
-    content: "";
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(59,130,246,0.4), transparent 70%);
-    top: -100px;
-    left: -100px;
-    filter: blur(80px);
-    z-index: 0;
-}
-
-/* contenido por encima */
-.seccion.fade-in:last-of-type .texto-seccion {
-    position: relative;
-    z-index: 1;
-
-    max-width: 720px;
-    margin: auto;
-    text-align: center;
-}
-
-/* título */
-.seccion.fade-in:last-of-type h2 {
-    font-size: 44px;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
-}
-
-/* texto */
-.seccion.fade-in:last-of-type p {
-    font-size: 20px;
-    line-height: 1.6;
-    opacity: 0.9;
-    margin-bottom: 20px;
-}
-
-/* botón PRO */
-.btn-calendario {
-    display: inline-block;
-
-    padding: 14px 28px;
-    border-radius: 999px;
-
-    font-size: 18px;
-    font-weight: 700;
-
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    color: white;
-
-    box-shadow: 0 0 20px rgba(59,130,246,0.5);
-
-    transition: all 0.3s ease;
-}
-
-/* hover */
-.btn-calendario:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 0 30px rgba(59,130,246,0.9);
 }
