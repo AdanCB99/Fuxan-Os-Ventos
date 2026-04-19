@@ -1155,15 +1155,13 @@ summary:hover {
 .seccion.fade-in:last-of-type {
     position: relative;
     overflow: hidden;
-
     background: linear-gradient(135deg, #020617, #1e293b);
     color: white;
-
     padding: 80px 5%;
     margin-top: 80px;
 }
 
-/* glow sutil detrás */
+/* glow */
 .seccion.fade-in:last-of-type::before {
     content: "";
     position: absolute;
@@ -1176,55 +1174,49 @@ summary:hover {
     z-index: 0;
 }
 
-/* contenido por encima */
+/* contenido */
 .seccion.fade-in:last-of-type .texto-seccion {
     position: relative;
     z-index: 1;
-
     max-width: 720px;
     margin: auto;
     text-align: center;
 }
 
 /* título */
-.seccion.fade-in:last-of-type h2 {
+.seccion.fade-in:last-of-type .texto-seccion h2 {
+    color: #ffffff;
     font-size: 44px;
     margin-bottom: 20px;
     letter-spacing: -0.5px;
 }
 
 /* texto */
-.seccion.fade-in:last-of-type p {
+.seccion.fade-in:last-of-type .texto-seccion > p {
+    color: rgba(255,255,255,0.92);
     font-size: 20px;
     line-height: 1.6;
-    opacity: 0.9;
+    opacity: 1;
     margin-bottom: 20px;
 }
 
-/* botón PRO */
+/* botón (IMPORTANTE) */
 .btn-calendario {
     display: inline-block;
-
     padding: 14px 28px;
     border-radius: 999px;
-
     font-size: 18px;
     font-weight: 700;
-
     background: linear-gradient(135deg, #3b82f6, #2563eb);
     color: white;
-
     box-shadow: 0 0 20px rgba(59,130,246,0.5);
-
     transition: all 0.3s ease;
 }
 
-/* hover */
 .btn-calendario:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 0 30px rgba(59,130,246,0.9);
 }
-
 /* =========================
    RESPONSIVE
 ========================= */
