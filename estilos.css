@@ -1124,6 +1124,45 @@ summary:hover {
     color: #0f172a;
 }
 
+/* =========================
+   INTRO PRO (HERO TEXTO)
+========================= */
+
+.intro-principal .texto-seccion {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* TÍTULO */
+.intro-principal h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+    color: #020617;
+}
+
+/* PÁRRAFO */
+.intro-principal p {
+    font-size: 20px;
+    line-height: 1.7;
+
+    text-align: left;              /* 🔥 clave */
+    padding-left: 18px;            /* 🔥 sangría elegante */
+
+    color: #334155;
+
+    border-left: 3px solid #3b82f6; /* 🔥 detalle premium */
+    padding-left: 18px;
+}
+
+/* NEGRITAS más destacadas */
+.intro-principal strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+
 .seccion .texto-seccion h2 {
     color: #0f172a;
 }
@@ -1359,4 +1398,81 @@ summary:hover {
         padding-left: 36px;
         white-space: normal;
     }
+}
+
+/* =========================
+   CTA FINAL PREMIUM
+========================= */
+
+.seccion.fade-in:last-of-type {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #020617, #1e293b);
+    color: white;
+
+    padding: 80px 5%;
+    margin-top: 80px;
+}
+
+/* glow sutil detrás */
+.seccion.fade-in:last-of-type::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(59,130,246,0.4), transparent 70%);
+    top: -100px;
+    left: -100px;
+    filter: blur(80px);
+    z-index: 0;
+}
+
+/* contenido por encima */
+.seccion.fade-in:last-of-type .texto-seccion {
+    position: relative;
+    z-index: 1;
+
+    max-width: 720px;
+    margin: auto;
+    text-align: center;
+}
+
+/* título */
+.seccion.fade-in:last-of-type h2 {
+    font-size: 44px;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+/* texto */
+.seccion.fade-in:last-of-type p {
+    font-size: 20px;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+/* botón PRO */
+.btn-calendario {
+    display: inline-block;
+
+    padding: 14px 28px;
+    border-radius: 999px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+
+    box-shadow: 0 0 20px rgba(59,130,246,0.5);
+
+    transition: all 0.3s ease;
+}
+
+/* hover */
+.btn-calendario:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 30px rgba(59,130,246,0.9);
 }
