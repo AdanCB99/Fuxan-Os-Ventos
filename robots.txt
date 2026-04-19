@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://openajedrezfuxanosventoslugo.com/sitemap.xml
