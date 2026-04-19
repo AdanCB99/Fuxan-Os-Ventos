@@ -1468,3 +1468,30 @@ summary:hover {
     flex: 1;
 }
 
+/* Intro principal debajo de la cabecera */
+.intro-principal h1,
+.intro-principal p {
+    color: #0f172a;
+}
+
+/* Secciones con imagen al lado */
+.seccion .texto-seccion h2 {
+    color: #0f172a;
+}
+
+.seccion .texto-seccion p {
+    color: #334155;
+}
+
+/* Texto dentro de tarjetas con imagen */
+.card-turismo.premium .contenido h3,
+.card-turismo.premium .contenido p {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.55);
+}
+
+/* CTA final oscuro */
+.seccion.fade-in:last-of-type .texto-seccion h2,
+.seccion.fade-in:last-of-type .texto-seccion p {
+    color: #fff;
+}
