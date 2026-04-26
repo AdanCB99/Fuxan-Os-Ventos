@@ -583,7 +583,7 @@ function buscarTodo() {
   const origenURL = encodeURIComponent(origenOriginal);
 
   btnMaps.href = `https://www.google.com/maps/dir/?api=1&origin=${origenURL}&destination=Lugo&travelmode=transit`;
-  btnOmio.href = `https://www.omio.es/app/search-frontend/results/${origenURL}/LUG/${fecha}`;
+  btnSkyscanner.href = `https://www.skyscanner.es/transport/flights/${origenURL}/scq/${fecha}/`;
   btnRome2Rio.href = `https://www.rome2rio.com/es/map/${origenURL}/Lugo`;
 
   plataformas.style.display = "flex";
