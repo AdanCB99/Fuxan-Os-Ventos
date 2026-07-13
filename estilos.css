@@ -1450,3 +1450,11 @@ summary:hover {
     margin:20px auto;
     border-radius:12px;
 }
+
+.acciones-horario{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
