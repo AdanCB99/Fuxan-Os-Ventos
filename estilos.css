@@ -1444,9 +1444,9 @@ summary:hover {
 }
 
 .img-horario{
-    width:100%;
+    width:min(100%,650px);
     height:auto;
-    object-fit:contain;
-    border-radius:12px;
     display:block;
+    margin:20px auto;
+    border-radius:12px;
 }
