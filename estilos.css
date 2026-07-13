@@ -1417,3 +1417,28 @@ summary:hover {
         white-space: normal;
     }
 }
+
+.botones-bus{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+
+.botones-bus a{
+    flex:1;
+    min-width:230px;
+    text-align:center;
+}
+
+@media (max-width:768px){
+
+    .botones-bus{
+        flex-direction:column;
+    }
+
+    .botones-bus a{
+        width:100%;
+    }
+
+}
