@@ -1442,3 +1442,11 @@ summary:hover {
     }
 
 }
+
+.img-horario{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    border-radius:12px;
+    display:block;
+}
